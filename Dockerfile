@@ -8,5 +8,6 @@ RUN apt-get update && apt-get install -y \
 
 COPY run.sh /run.sh
 RUN chmod a+x /run.sh
+COPY ac14k_m.pem /etc/ssl/ac14k_m.pem
 
 CMD [ "/run.sh" ]
