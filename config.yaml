@@ -1,0 +1,17 @@
+name: "Samsung AC TLS Proxy"
+version: "1.0.0"
+slug: "samsung_ac_proxy"
+description: "Bridges legacy TLSv1.0 for Samsung ACs. Source code: https://github.com/Ivanszky/samsung-ac-tls-proxy"
+url: "https://github.com/Ivanszky/samsung-ac-tls-proxy"
+arch:
+  - amd64
+# Map the UI input to the environment variable used in your run.sh
+env:
+  AC_IP: "{{ options.ac_ip }}"
+schema:
+  ac_ip: str
+options:
+  ac_ip: "192.168.0.70"
+network:
+  2878/tcp: 2878
+image: "gaborivanszky/samsung-ac-proxy:latest"
