@@ -14,4 +14,4 @@ options:
   ac_ip: "192.168.0.70"
 network:
   2878/tcp: 2878
-image: "gaborivanszky/samsung-ac-proxy:latest"
+image: "gaborivanszky/samsung-ac-proxy"
