@@ -6,7 +6,7 @@ url: "https://github.com/Ivanszky/samsung-ac-tls-proxy"
 arch:
   - amd64
 # Map the UI input to the environment variable used in your run.sh
-env:
+environment:
   AC_IP: "{{ options.ac_ip }}"
 schema:
   ac_ip: str
