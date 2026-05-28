@@ -8,5 +8,4 @@ The Docker container image template, build history, and scripts are hosted on Gi
 
 ## Re-deployment / Restore Instructions
 This add-on is completely backed up by native Home Assistant backups (`.tar`). If restoring:
-1. Ensure your original `ac14k_m.pem` certificate file is dropped back into your `/config/` directory.
-2. The Home Assistant Supervisor will read this folder's metadata, hit Docker Hub, and download the core image automatically.
+1. The Home Assistant Supervisor will read this folder's metadata, hit Docker Hub, and download the core image automatically.
