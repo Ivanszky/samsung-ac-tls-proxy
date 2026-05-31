@@ -1,17 +1,16 @@
-name: "Samsung AC TLS Proxy"
+name: "Samsung AC Proxy"
 version: "1.0.0"
 slug: "samsung_ac_proxy"
-description: "Bridges legacy TLSv1.0 for Samsung ACs. Source code: https://github.com/Ivanszky/samsung-ac-tls-proxy"
-url: "https://github.com/Ivanszky/samsung-ac-tls-proxy"
+description: "A secure TLS proxy to bridge Home Assistant Climate IP with older Samsung AC units."
 arch:
   - amd64
-# Map the UI input to the environment variable used in your run.sh
-environment:
-  AC_IP: "{{ options.ac_ip }}"
-schema:
-  ac_ip: str
+  - aarch64
+  - armv7
+startup: "services"
+boot: "auto"
+ports:
+  2878/tcp: 2878
 options:
   ac_ip: "192.168.0.70"
-network:
-  2878/tcp: 2878
-image: "gaborivanszky/samsung-ac-proxy"
+schema:
+  ac_ip: str

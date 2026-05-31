@@ -1,8 +1,19 @@
 #!/bin/bash
 
-# Check if AC_IP is provided
-if [ -z "$AC_IP" ]; then
-    echo "[Error] AC_IP environment variable is not set."
+OPTIONS_FILE="/data/options.json"
+
+# Check if the Home Assistant options file exists
+if [ ! -f "$OPTIONS_FILE" ]; then
+    echo "[Error] Home Assistant options file not found at $OPTIONS_FILE"
+    exit 1
+fi
+
+# Read ac_ip from the JSON options file using jq
+AC_IP=$(jq -r '.ac_ip' "$OPTIONS_FILE")
+
+# Validate that the variable is not empty or null
+if [ -z "$AC_IP" ] || [ "$AC_IP" == "null" ]; then
+    echo "[Error] Could not read ac_ip from Add-on configuration."
     exit 1
 fi
 
